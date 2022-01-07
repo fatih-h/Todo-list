@@ -1,3 +1,15 @@
 .main-box {
     grid-area: main;
 }
+
+.main-todo {}
+
+.main-todo-title {}
+
+.main-todo-description {}
+
+.main-todo-dueDate {}
+
+.main-todo-priority {}
+
+.main-todo-check {}
