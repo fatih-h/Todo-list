@@ -1,12 +1,12 @@
-.header-box{
-    height: 20vh;
+.header-box {
+    grid-area: header;
     display: flex;
     align-items: center;
     text-align: center;
     border-bottom: 1px solid black;
 }
 
-.header-heading{
-    flex:1;
+.header-heading {
+    flex: 1;
     font-size: 3em;
 }

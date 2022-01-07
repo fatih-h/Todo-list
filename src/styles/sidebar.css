@@ -1,6 +1,5 @@
 .side-box {
-    height: 80vh;
-    width: 25vw;
+    grid-area: sidebar;
     display: flex;
     flex-direction: column;
     padding: 2em 0 2em 4em;
