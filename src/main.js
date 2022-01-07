@@ -23,7 +23,7 @@ function main() {
     priority.classList.add('main-todo-priority');
     check.classList.add('main-todo-check');
 
-    let task = new todo('Buy Apple', 'GO to grocery to buy an apple', format(new Date(),'d/M/y'));
+    let task = new todo('Buy Apple', 'GO to grocery to buy an apple', format(new Date(),'d-M-y'));
     console.log(task.title);
     console.log(task.description);
     console.log(task.dueDate);
@@ -32,8 +32,7 @@ function main() {
 
     title.textContent = task.title;
     description.textContent = task.description;
-    dueDate.setAttribute('placeholder',task.dueDate);
-    dueDate.setAttribute('value', ' ');
+    // dueDate.placeholder= `${task.dueDate}`;
     priority.style.backgroundColor = task.priority;
 
 
