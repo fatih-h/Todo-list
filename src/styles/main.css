@@ -1,15 +1,59 @@
 .main-box {
     grid-area: main;
+    display: flex;
+    line-height: 1.5;
 }
 
-.main-todo {}
+.main-todo {
+    flex: 0 1 100%;
+    padding: 1em 2em;
+    display: grid;
+    grid-template-columns: 1fr 2fr 2fr 2fr 1fr 2fr;
+    grid-template-rows: 7vh 7vh 6vh;
+    grid-template-areas:
+        '. title title title dueDate dueDate'
+        'check description description  description description  description'
+        '. priority priority . . .'
+    ;
+}
 
-.main-todo-title {}
+.main-todo-title {
+    grid-area: title;
+}
 
-.main-todo-description {}
+.main-todo-description {
+    grid-area: description;
+}
 
-.main-todo-dueDate {}
+.main-todo-dueDate {
+    grid-area: dueDate;
+    margin: 0.8em;
+    width: 50%;
+}
 
-.main-todo-priority {}
+.main-todo-priority {
+    grid-area: priority;
+    display: flex;
+    gap:2em;
+}
 
-.main-todo-check {}
+.green {
+    flex: 1;
+}
+
+.yellow {
+    flex: 1;
+}
+
+.red {
+    flex: 1;
+}
+
+.main-todo-check {
+    grid-area: check;
+    width: 40px;
+    height: 40px;
+    justify-self: center;
+    align-self: center;
+
+}
