@@ -18,8 +18,8 @@ h1, h2, h3, h4, h5, h6, p {
 
 #content {
     display: grid;
-    grid-template-columns: 25vw 75vw;
-    grid-template-rows: 20vh 80vh;
+    grid-template-columns: 25vw minmax(75vw,auto);
+    grid-template-rows: 20vh minmax(80vh,auto);
     grid-template-areas:
         'header header'
         'sidebar main'

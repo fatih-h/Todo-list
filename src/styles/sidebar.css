@@ -2,12 +2,14 @@
     grid-area: sidebar;
     display: flex;
     flex-direction: column;
-    padding: 2em 0 2em 4em;
+    padding: 2em 4em 2em 4em;
     gap: 2em;
+    border-right:1px solid black;
+    
 }
 
 .side-button {
-    flex-basis: 30%;
+    height:200px;
     display: flex;
     flex-direction: column;
     gap: 1em;
