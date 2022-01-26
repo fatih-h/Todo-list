@@ -1,5 +1,6 @@
 import './styles/sidebar.css';
-// import todo from './todo';
+import makeTodo from './makeTodo';
+import { EvalSourceMapDevToolPlugin } from 'webpack';
 
 function sidebar() {
     let main = document.createElement('div');
@@ -31,6 +32,7 @@ function sidebar() {
     today.textContent = 'Today';
     heading.textContent = 'Projects';
     add.textContent = 'Add New Project';
+
 
     main.appendChild(navbar);
     main.appendChild(project);

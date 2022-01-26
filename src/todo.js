@@ -8,6 +8,9 @@ class todo {
     changePriority(value) {
         this.priority = value;
     }
+    changeDate(value){
+        this.dueDate = value;
+    }
 
 };
 export default todo;
