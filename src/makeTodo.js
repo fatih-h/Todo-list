@@ -1,3 +1,4 @@
+import './styles/main.css';
 import todo from './todo';
 import { format } from 'date-fns';
 

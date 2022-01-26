@@ -1,6 +1,6 @@
 import './styles/main.css';
 import makeTodo from './makeTodo';
-import sidebar from './sidebar';
+
 
 function doItem() {
     let main = document.createElement('div');

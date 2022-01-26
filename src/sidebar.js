@@ -1,6 +1,6 @@
 import './styles/sidebar.css';
 import makeTodo from './makeTodo';
-import { EvalSourceMapDevToolPlugin } from 'webpack';
+import { nb } from 'date-fns/locale';
 
 function sidebar() {
     let main = document.createElement('div');
@@ -33,6 +33,21 @@ function sidebar() {
     heading.textContent = 'Projects';
     add.textContent = 'Add New Project';
 
+    add.addEventListener('click',(event)=>{
+        let text = document.createElement('input');
+        text.setAttribute('type','text');
+        add.before(text);
+        text.addEventListener("keyup",(e)=>{
+            if(e.key =="Enter"){
+                let nButton = document.createElement('button');
+                nButton.setAttribute('type','button');
+                nButton.textContent = text.value;
+                text.after(nButton);
+                text.remove();
+            }
+        })
+        
+    });
 
     main.appendChild(navbar);
     main.appendChild(project);
