@@ -6,8 +6,6 @@ function doItem() {
     let main = document.createElement('div');
     main.classList.add('main-box');
 
-    main.appendChild(makeTodo('Salata yap', 'Soyle guzel bir salata yap'));
-
 
     return main;
 }

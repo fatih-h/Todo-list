@@ -1,5 +1,6 @@
 import './styles/sidebar.css';
 import makeTodo from './makeTodo';
+import todo from './todo';
 import { nb } from 'date-fns/locale';
 
 function sidebar() {
@@ -32,21 +33,26 @@ function sidebar() {
     today.textContent = 'Today';
     heading.textContent = 'Projects';
     add.textContent = 'Add New Project';
-
-    add.addEventListener('click',(event)=>{
+    let i = 0;
+    add.addEventListener('click', (event) => {
         let text = document.createElement('input');
-        text.setAttribute('type','text');
+        text.setAttribute('type', 'text');
         add.before(text);
-        text.addEventListener("keyup",(e)=>{
-            if(e.key =="Enter"){
+        text.addEventListener("keyup", (e) => {
+            if (e.key == "Enter") {
                 let nButton = document.createElement('button');
-                nButton.setAttribute('type','button');
+                nButton.setAttribute('type', 'button');
+                nButton.classList.add('side-project-new');
+                nButton.classList.add(`side-project-${i}`);
+                i++;
                 nButton.textContent = text.value;
+
                 text.after(nButton);
                 text.remove();
+
             }
         })
-        
+
     });
 
     main.appendChild(navbar);
@@ -56,6 +62,7 @@ function sidebar() {
     navbar.appendChild(today);
     project.appendChild(heading);
     project.appendChild(add);
+
 
     return main;
 }
