@@ -3,10 +3,10 @@ import todo from './todo';
 import { format } from 'date-fns';
 
 
-function makeTodo(tit, desc) {
+function makeTodo() {
     let box = document.createElement('div');
-    let title = document.createElement('h2');
-    let description = document.createElement('p');
+    let title = document.createElement('input');
+    let description = document.createElement('input');
     let dueDate = document.createElement('input');
     let priority = document.createElement('div');
     let green = document.createElement('button');
@@ -14,6 +14,11 @@ function makeTodo(tit, desc) {
     let red = document.createElement('button');
     let check = document.createElement('button');
 
+
+    title.setAttribute('type', 'text');
+    title.setAttribute('placeholder', 'title');
+    description.setAttribute('type', 'text');
+    description.setAttribute('placeholder', 'description');
     dueDate.setAttribute('type', 'date');
     dueDate.value = format(new Date(), 'y-MM-dd');
     dueDate.setAttribute('min', format(new Date(), 'y-MM-dd'));
@@ -36,10 +41,33 @@ function makeTodo(tit, desc) {
     red.classList.add('red');
     check.classList.add('main-todo-check');
 
-    let task = new todo(tit, desc, format(new Date(), 'dd-MM-y'));
+    let task = new todo();
+    box.addEventListener('click', () => {
+        console.log(task);
+    });
 
-    title.textContent = task.title;
-    description.textContent = task.description;
+    title.addEventListener('keyup', (event) => {
+        if (event.key == "Enter") {
+            task.changeTitle(title.value);
+            let tit = document.createElement('h2');
+            tit.textContent = task.title;
+            title.after(tit);
+            tit.classList.add('main-todo-title');
+            title.remove();
+        }
+    });
+
+    description.addEventListener('keyup', (event) => {
+        if (event.key == "Enter") {
+            task.changeDescription(description.value);
+
+            let desc = document.createElement('p');
+            desc.textContent = task.description;
+            description.after(desc);
+            desc.classList.add('main-todo-description');
+            description.remove();
+        }
+    });
 
     dueDate.addEventListener('change', event => {
         task.changeDate(event.target.value);

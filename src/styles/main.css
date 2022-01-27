@@ -12,7 +12,7 @@
     grid-template-rows: 5vh 4.5vh 3.5vh;
     grid-template-areas:
         '. title title title dueDate dueDate'
-        'check description description  description description  description'
+        'check description description  description description .'
         '. priority priority . . .'
     ;
 }
@@ -27,7 +27,6 @@
 
 .main-todo-dueDate {
     grid-area: dueDate;
-
     width: 50%;
 }
 
@@ -55,5 +54,4 @@
     height: 20px;
     justify-self: center;
     align-self: center;
-
 }
