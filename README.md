@@ -1,1 +1,1 @@
-Making todo Project with;<br/>Html & CSS & Javascript and Webpack
+Todo Project made with;<br/>Html & CSS & Javascript and Webpack
