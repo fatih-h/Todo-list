@@ -28,17 +28,17 @@
     flex: 1;
 }
 
-.side-project {
+/* .side-project {
     flex-basis: 70%;
     display: flex;
     flex-direction: column;
     gap: 1em;
-}
+} */
 
-.side-project-heading {}
+/* .side-project-heading {}
 
 .side-project-new {
     height: 30px;
 }
 
-.side-project-add {}
+.side-project-add {} */
