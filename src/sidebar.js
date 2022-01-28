@@ -43,7 +43,6 @@ function sidebar() {
                 let nButton = document.createElement('button');
                 nButton.setAttribute('type', 'button');
                 nButton.classList.add('side-project-new');
-                nButton.classList.add(`side-project-${i}`);
                 i++;
                 nButton.textContent = text.value;
 

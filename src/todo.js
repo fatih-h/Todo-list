@@ -1,8 +1,12 @@
 import { format } from 'date-fns';
 class todo {
 
-    constructor() {
+    constructor(type) {
+        this.title = '';
+        this.description = '';
+        this.priority = 'Easy';
         this.dueDate = format(new Date(), 'dd-MM-y');
+        this.project = type;
     }
     changeTitle(value) {
         this.title = value;
@@ -16,8 +20,8 @@ class todo {
     changeDate(value) {
         this.dueDate = value;
     }
-    print(){
-        console.log(this);
+    changeType(value) {
+        this.project = value;
     }
 
 };

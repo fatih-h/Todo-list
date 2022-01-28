@@ -2,8 +2,7 @@ import './styles/main.css';
 import todo from './todo';
 import { format } from 'date-fns';
 
-
-function makeTodo() {
+function makeTodo(type) {
     let box = document.createElement('div');
     let title = document.createElement('input');
     let description = document.createElement('input');
@@ -27,6 +26,7 @@ function makeTodo() {
     red.setAttribute('type', 'button');
     check.setAttribute('type', 'button');
 
+
     green.textContent = "Easy";
     yellow.textContent = "Normal";
     red.textContent = "Hard";
@@ -41,10 +41,7 @@ function makeTodo() {
     red.classList.add('red');
     check.classList.add('main-todo-check');
 
-    let task = new todo();
-    box.addEventListener('click', () => {
-        console.log(task);
-    });
+    let task = new todo(type);
 
     title.addEventListener('keyup', (event) => {
         if (event.key == "Enter") {
@@ -90,7 +87,8 @@ function makeTodo() {
 
     check.addEventListener('dblclick', event => {
         box.remove();
-    })
+    });
+    check.classList.add(type);
 
     box.appendChild(title);
     box.appendChild(description);
